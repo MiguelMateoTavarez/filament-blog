@@ -72,7 +72,7 @@ class User extends Authenticatable
 
     public function hasAnyRole(array $roles): bool
     {
-        return $this->roles->whereIn('name', $roles)->isNoEmpty();
+        return $this->roles->whereIn('name', $roles)->isNotEmpty();
     }
 
     public function hasRoles(): bool
